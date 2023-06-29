@@ -16,9 +16,10 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     posts: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'postModel',
+        title: String,
+        content: String
     }]
+
 })
 
 module.exports = mongoose.model('userModel', userSchema, 'Users')

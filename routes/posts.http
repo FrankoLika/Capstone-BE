@@ -2,3 +2,17 @@ GET http://localhost:5050/posts
 
 #######
 
+POST http://localhost:5050/posts/new/649d73f457c228344497d0a2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title" : "utente2",
+    "content" : "utente2"
+
+}
+
+#######
+
+DELETE http://localhost:5050/posts/delete/649d73f457c228344497d0a2/649d7728c9830fd538c424e8
+
+

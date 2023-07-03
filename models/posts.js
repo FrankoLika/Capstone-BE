@@ -14,6 +14,10 @@ const postSchema = new mongoose.Schema({
         required: false,
         default: "https://tse2.mm.bing.net/th?id=OIP.tT6tBsjQq6RzVEjT-nHiXgHaHa&pid=Api&P=0&h=180"
     },
+    likes:{
+        type: Number,
+        default: 0,
+    },
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'userModel',

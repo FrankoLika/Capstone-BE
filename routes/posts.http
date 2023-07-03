@@ -13,6 +13,6 @@ Content-Type: application/json
 
 #######
 
-DELETE http://localhost:5050/posts/delete/649d73f457c228344497d0a2/649d7728c9830fd538c424e8
+DELETE http://localhost:5050/posts/delete/649d73f457c228344497d0a2/64a2a26ef3ec038636c26a93
 
 

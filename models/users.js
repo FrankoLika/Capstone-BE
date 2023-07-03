@@ -18,7 +18,19 @@ const userSchema = new mongoose.Schema({
     posts: [{
         title: String,
         content: String
-    }]
+    }],
+    followers: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'userModel'
+        }
+    ],
+    following: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'userModel'
+        }
+    ]
 
 })
 

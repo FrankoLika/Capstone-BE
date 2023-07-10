@@ -17,7 +17,7 @@ router.get('/users', async (req, res) => {
     }
 })
 
-router.post('/users/new', [
+router.post('/register', [
     body('username').notEmpty().withMessage('username field is required'),
     body('email').isEmail().withMessage('email must be valid'),
     body('password').isLength({ min: 6 }).withMessage('password is required and must be at least 6 characters long')

@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
     } catch (error) {
         res.status(500)
             .send({
-                message: 'internal server error',
+                message: 'All fields are required',
                 statusCode: 500
             })
     }

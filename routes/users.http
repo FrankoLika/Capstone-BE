@@ -2,6 +2,10 @@ GET http://localhost:5050/users
 
 #######
 
+GET http://localhost:5050/users/64ac17bb10bc74cb52e3ef4d
+
+#######
+
 POST http://localhost:5050/register HTTP/1.1
 Content-Type: application/json
 

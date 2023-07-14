@@ -17,6 +17,21 @@ router.get('/users', async (req, res) => {
     }
 })
 
+router.get('/users/:id', async (req, res) => {
+    const userId = req.params.id
+    try {
+      const user = await UsersModel.findById(userId);
+  
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ error: 'Utente non trovato' });
+      }
+    } catch (err) {
+      res.status(500).json({ error: 'Errore del server' });
+    }
+  });
+
 router.post('/register', [
     body('username').notEmpty().withMessage('username field is required'),
     body('email').isEmail().withMessage('email must be valid'),

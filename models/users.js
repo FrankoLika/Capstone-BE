@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    avatar: {
+        type: String,
+        default: "https://tse2.mm.bing.net/th?id=OIP.tT6tBsjQq6RzVEjT-nHiXgHaHa&pid=Api&P=0&h=180"
+    },
     posts: [{
         title: String,
         content: String

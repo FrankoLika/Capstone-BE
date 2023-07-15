@@ -23,7 +23,7 @@ router.post('/login', async (req, res) => {
                 statusCode: 400
             })
         }
-        const token = jwt.sign({ email: user.email }, process.env.SECRET_JWT_KEY, { expiresIn: "12h" })
+        const token = jwt.sign({ id: user._id, email: user.email }, process.env.SECRET_JWT_KEY, { expiresIn: "12h" })
         return res.status(200).send({
             message: 'Logged',
             token: token,
@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
     } catch (error) {
         res.status(500)
             .send({
-                message: 'internal server error',
+                message: 'All fields are required',
                 statusCode: 500
             })
     }

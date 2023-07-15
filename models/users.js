@@ -23,19 +23,19 @@ const userSchema = new mongoose.Schema({
         title: String,
         content: String
     }],
+    following: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'userModel'
+        },
+
+    ],
     followers: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'userModel'
         }
-    ],
-    following: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'userModel'
-        }
     ]
-
 })
 
 module.exports = mongoose.model('userModel', userSchema, 'Users')

@@ -6,6 +6,7 @@ const usersRoute = require('./routes/users')
 const postsRoute = require('./routes/posts')
 const loginRoute = require('./routes/login')
 const githubRoute = require('./routes/gitHubAuth')
+const path = require('path')
 
 const PORT = 5050;
 const app = express()
@@ -17,6 +18,9 @@ app.use('/', usersRoute);
 app.use('/', postsRoute);
 app.use('/', loginRoute);
 app.use('/', githubRoute);
+
+app.use('/uploads', express.static(path.join(__dirname, './uploads')))
+
 
 mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,

@@ -14,7 +14,7 @@ const postSchema = new mongoose.Schema({
         required: false,
         default: "https://tse2.mm.bing.net/th?id=OIP.tT6tBsjQq6RzVEjT-nHiXgHaHa&pid=Api&P=0&h=180"
     },
-    likes:{
+    likes: {
         type: Number,
         default: 0,
     },

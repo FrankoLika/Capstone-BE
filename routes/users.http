@@ -18,13 +18,14 @@ Content-Type: application/json
 
 #######
 
-PATCH http://localhost:5050/users/64946074815f129f87b31a23 HTTP/1.1
+PATCH http://localhost:5050/users/64b2cc1dc17831c1f277d709 HTTP/1.1
 Content-Type: application/json
 
 {
     "username" : "usernamecambiato",
     "email" : "emailcambiata@gmail.com",
-    "password" : "passwordcambiata"
+    "password" : "passwordcambiata",
+    "avatar" : "ciao"
 }
 
 #######

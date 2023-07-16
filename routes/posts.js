@@ -30,7 +30,7 @@ router.get('/posts', async (req, res) => {
     }
 })
 
-router.post('/posts/uploadImg', internalUpload.single('img'), async(req, res) => {
+router.post('/posts/uploadImg', internalUpload.single('img'), async (req, res) => {
     const url = req.protocol + '://' + req.get('host')
 
     try {

@@ -2,12 +2,12 @@ GET http://localhost:5050/posts
 
 #######
 
-POST http://localhost:5050/posts/new/649d73f457c228344497d0a2 HTTP/1.1
+POST http://localhost:5050/posts/new/64b2cc1dc17831c1f277d709 HTTP/1.1
 Content-Type: application/json
 
 {
-    "title" : "utente2",
-    "content" : "utente2"
+    "title" : "utenteAndrea",
+    "content" : "utenteAndrea"
 
 }
 

@@ -30,10 +30,27 @@ router.get('/posts', async (req, res) => {
     }
 })
 
+router.post('/posts/uploadImg', internalUpload.single('img'), async(req, res) => {
+    const url = req.protocol + '://' + req.get('host')
+
+    try {
+        const imgUrl = req.file.filename
+        res.status(200).json({
+            img: `${url}/uploads/${imgUrl}`
+        })
+    } catch (error) {
+        console.error('File upload failed:', error)
+        res.status(500).send({
+            message: 'File upload error',
+            statusCode: 500
+        })
+    }
+})
+
 router.post('/posts/new/:userId', async (req, res) => {
     try {
         const { userId } = req.params;
-        const { title, content } = req.body;
+        const { title, content, img } = req.body;
 
         const user = await userModel.findById(userId);
 
@@ -48,6 +65,7 @@ router.post('/posts/new/:userId', async (req, res) => {
             title: title,
             content: content,
             author: userId,
+            img: img
         })
 
         const postExist = await postModel.findOne({ title: title })
@@ -57,7 +75,7 @@ router.post('/posts/new/:userId', async (req, res) => {
         const newPost = await post.save()
 
         user.posts.push(newPost);
-        
+
         await user.save();
 
         res.status(201).send({
